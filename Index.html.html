@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nalla Durga Nagamani | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #0f172a; /* Deep Charcoal */
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --accent: #8b5cf6; /* Electric Violet */
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --nav-bg: rgba(15, 23, 42, 0.95);
+        }
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--nav-bg);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .logo { font-weight: bold; font-size: 1.2rem; color: var(--accent); letter-spacing: 1px; }
+        nav a { color: var(--text-main); text-decoration: none; margin-left: 20px; font-size: 0.9rem; transition: 0.3s; }
+        nav a:hover { color: var(--accent); }
+
+        /* --- Hero/Home Section --- */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #1e1b4b 0%, #0f172a 100%);
+            padding: 0 20px;
+        }
+
+        header h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 10px; color: #fff; }
+        .headline { font-size: clamp(1rem, 2vw, 1.4rem); color: var(--accent); font-weight: 500; margin-bottom: 30px; }
+
+        /* --- Sections General --- */
+        section { padding: 100px 10% 60px 10%; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        h2 { font-size: 2rem; border-left: 5px solid var(--accent); padding-left: 15px; margin-bottom: 40px; }
+
+        /* --- Skills Grid --- */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            padding: 30px 15px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(139, 92, 246, 0.1);
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
+        }
+
+        .skill-card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 15px; }
+        .skill-card h4 { margin: 10px 0; }
+        .skill-card p { font-size: 0.8rem; color: var(--text-dim); }
+
+        /* --- Projects Grid --- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s;
+        }
+
+        .project-card:hover { transform: scale(1.02); border-color: var(--accent); }
+
+        .project-img {
+            width: 100%;
+            height: 230px;
+            background: #1e293b;
+            object-fit: cover;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .project-info { padding: 25px; }
+        .project-info h3 { margin-top: 0; color: var(--accent); }
+        .project-info p { font-size: 0.95rem; color: var(--text-dim); margin-bottom: 15px; }
+        
+        /* --- Contact & Buttons --- */
+        .btn {
+            background: var(--accent);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            display: inline-block;
+            font-weight: 600;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover { background: #7c3aed; box-shadow: 0 0 15px var(--accent); }
+
+        .contact-container {
+            background: var(--card-bg);
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .social-links { margin-top: 25px; }
+        .social-links a {
+            color: white;
+            font-size: 2rem;
+            margin: 0 15px;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover { color: var(--accent); }
+
+        /* Responsive Fixes */
+        @media (max-width: 768px) {
+            section { padding: 80px 5%; }
+            .project-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">DATA ANALYTICS</div>
+        <div>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header id="home">
+        <h1>Nalla Durga Nagamani</h1>
+        <p class="headline">Aspiring Data Analyst | Power BI | Excel | SQL | AI Enthusiast</p>
+        <a href="#projects" class="btn">Explore Projects</a>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a passionate analyst who bridges the gap between raw data and strategic insights. With a completed <strong>short-term internship in Artificial Intelligence</strong> and a <strong>long-term internship in Data Analytics</strong>, I have developed a deep understanding of how to use modern tools to solve complex business problems. I enjoy creating interactive visualizations that tell a story and help organizations make data-driven decisions.</p>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Toolkit</h2>
+        <div class="skills-container">
+            <div class="skill-card">
+                <i class="fas fa-chart-line"></i>
+                <h4>Power BI</h4>
+                <p>DAX, Power Query, Modeling</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-database"></i>
+                <h4>SQL</h4>
+                <p>Complex Queries, Joins</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-file-excel"></i>
+                <h4>Advanced Excel</h4>
+                <p>Pivot Tables, VLOOKUP</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-brain"></i>
+                <h4>AI / ML</h4>
+                <p>Prompt Eng, Basic Models</p>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-python"></i>
+                <h4>Python</h4>
+                <p>Pandas, Data Cleaning</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Internship Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <img src="https://i.ibb.co/0VBvdfzP/Screenshot-2026-02-27-203028.png" alt="E-commerce Sales Dashboard" class="project-img">
+                <div class="project-info">
+                    <h3>E-commerce Sales Dashboard</h3>
+                    <p>This project is an interactive E-commerce Sales Dashboard built using Power BI to analyze sales performance, profit trends, and customer behavior. It monitors YTD sales, profit margins, and allows filtering by segments like Consumer, Corporate, and Home Office.</p>
+                    <span style="color:var(--accent); font-size: 0.8rem;">POWER BI | DATA ANALYSIS</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="https://i.ibb.co/JFSYQw3R/Screenshot-2026-02-27-203748.png" alt="Employee Details Analysis" class="project-img">
+                <div class="project-info">
+                    <h3>Employee Details Analysis</h3>
+                    <p>An interactive Power BI dashboard designed to analyze employee data across job roles and departments. It provides insights into total headcount, salary distribution, and departmental growth using interactive slicers for deep-dive exploration.</p>
+                    <span style="color:var(--accent); font-size: 0.8rem;">POWER BI | HR ANALYTICS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-container">
+            <h2>Get In Touch</h2>
+            <p>I am currently looking for new opportunities!</p>
+            <p style="font-size: 1.2rem; margin: 10px 0;">
+                <i class="fas fa-envelope" style="color:var(--accent)"></i> emaildurganagamaninalla25@gmail.com<br>
+                <i class="fas fa-phone" style="color:var(--accent)"></i> +91 9398852132
+            </p>
+            <div class="social-links">
+                <a href=" https://github.com/durganagamaninalla25-sketch/Durga.git" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/durga-nagamani-nalla" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 20px; font-size: 0.8rem; color: var(--text-dim);">
+        &copy; 2024 Nalla Durga Nagamani | Designed for Data Excellence
+    </footer>
+
+</body>
+</html>
